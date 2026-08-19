@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Πιλοτικός, μη αποθηκευτικός οδηγός υποψηφίων για τη Δυτική Μακεδονία." />
+    <title>Η δική μου επιλογή — Πιλοτικός οδηγός ψηφοφόρου</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Αρχική σελίδα">
+        <span class="brand-mark" aria-hidden="true">✓</span>
+        <span>Η δική μου επιλογή</span>
+      </a>
+      <button class="privacy-pill" id="privacyButton" type="button">
+        <span aria-hidden="true">◉</span> Δεν αποθηκεύουμε απαντήσεις
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="eyebrow">ΠΙΛΟΤΙΚΟΣ ΟΔΗΓΟΣ ΨΗΦΟΦΟΡΟΥ · ΔΥΤΙΚΗ ΜΑΚΕΔΟΝΙΑ</div>
+        <h1>Ποιος υποψήφιος<br /><em>σε εκφράζει;</em></h1>
+        <p class="hero-copy">
+          Επίλεξε την εκλογική σου περιφέρεια, διάβασε τεκμηριωμένες δημόσιες θέσεις
+          και σύγκρινε σύντομα τις θέσεις τους στα ίδια βασικά εθνικά ζητήματα.
+        </p>
+        <aside class="pilot-note">
+          <strong>Ιστορικά δεδομένα δοκιμής</strong>
+          <span>Τα ονόματα προέρχονται από τις εκλογές της 25ης Ιουνίου 2023 και δεν αποτελούν κατάλογο υποψηφίων για το 2027.</span>
+        </aside>
+      </section>
+
+      <section class="finder" aria-labelledby="finderTitle">
+        <div class="section-heading">
+          <span>01</span>
+          <div>
+            <h2 id="finderTitle">Βρες την περιφέρειά σου</h2>
+            <p>Ο πιλότος καλύπτει τις τέσσερις εκλογικές περιφέρειες της Δυτικής Μακεδονίας.</p>
+          </div>
+        </div>
+
+        <div class="district-grid" id="districtGrid" aria-label="Επιλογή εκλογικής περιφέρειας"></div>
+      </section>
+
+      <section class="workspace hidden" id="workspace" aria-live="polite">
+        <div class="workspace-head">
+          <div>
+            <div class="eyebrow">Η ΕΚΛΟΓΙΚΗ ΣΟΥ ΠΕΡΙΦΕΡΕΙΑ</div>
+            <h2 id="districtTitle"></h2>
+            <p id="districtMeta"></p>
+          </div>
+          <button class="text-button" id="changeDistrict" type="button">Αλλαγή περιφέρειας</button>
+        </div>
+
+        <div class="filter-row">
+          <label class="search-field">
+            <span class="sr-only">Αναζήτηση υποψηφίου</span>
+            <input id="candidateSearch" type="search" placeholder="Αναζήτηση ονόματος…" autocomplete="off" />
+          </label>
+          <label class="select-field">
+            <span class="sr-only">Φίλτρο κόμματος</span>
+            <select id="partyFilter"><option value="all">Όλα τα κόμματα</option></select>
+          </label>
+        </div>
+
+        <div class="candidate-layout">
+          <aside class="candidate-list-wrap">
+            <div class="list-count" id="candidateCount"></div>
+            <div class="candidate-list" id="candidateList"></div>
+          </aside>
+          <article class="candidate-detail" id="candidateDetail"></article>
+        </div>
+      </section>
+
+      <section class="results hidden" id="results" aria-labelledby="resultsTitle">
+        <div class="section-heading inverse">
+          <span>02</span>
+          <div>
+            <h2 id="resultsTitle">Η προσωπική σου εικόνα</h2>
+            <p>Υπολογίζεται μόνο από τις δηλώσεις που επέλεξες να αξιολογήσεις.</p>
+          </div>
+        </div>
+        <div id="resultsBody"></div>
+        <p class="results-disclaimer">
+          Η σειρά δεν αποτελεί εκλογική σύσταση. Δείχνει αποκλειστικά πόσο δήλωσες ότι συμφωνείς με τις διαθέσιμες δημόσιες θέσεις κάθε προσώπου.
+        </p>
+        <button class="reset-button" id="resetAnswers" type="button">Καθαρισμός των απαντήσεών μου</button>
+      </section>
+
+      <section class="methodology" id="methodology">
+        <div class="section-heading">
+          <span>03</span>
+          <div>
+            <h2>Πώς λειτουργεί</h2>
+            <p>Διαφάνεια για τα δεδομένα, τις πηγές και τους περιορισμούς του πιλότου.</p>
+          </div>
+        </div>
+        <div class="method-grid">
+          <article><b>1</b><h3>Κοινά ζητήματα</h3><p>Οι υποψήφιοι συγκρίνονται στους ίδιους εθνικούς άξονες. Οι τοπικές παρεμβάσεις εμφανίζονται χωριστά και δεν επηρεάζουν το αποτέλεσμα.</p></article>
+          <article><b>2</b><h3>Δική σου εκτίμηση</h3><p>Δεν βαθμολογούμε υποψηφίους. Εσύ δηλώνεις από 0% έως 100% πόσο συμφωνείς με κάθε θέση.</p></article>
+          <article><b>3</b><h3>Χωρίς αποθήκευση</h3><p>Οι απαντήσεις ζουν μόνο στη μνήμη της ανοιχτής σελίδας. Με ανανέωση ή κλείσιμο χάνονται.</p></article>
+        </div>
+        <p class="source-note">
+          Κατάλογος ονομάτων: εκλογές 25 Ιουνίου 2023. Η πιλοτική έκδοση περιλαμβάνει τα κόμματα που εκπροσωπήθηκαν στη Βουλή μετά την αναμέτρηση. Οι τεκμηριωμένες θέσεις είναι ενδεικτικό, μη εξαντλητικό δείγμα για τη δοκιμή της ροής.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="privacyDialog">
+      <button class="dialog-close" id="dialogClose" type="button" aria-label="Κλείσιμο">×</button>
+      <h2>Οι επιλογές σου μένουν στη συσκευή σου</h2>
+      <p>Η εφαρμογή δεν χρησιμοποιεί βάση δεδομένων, λογαριασμό, cookies, localStorage ή εργαλεία καταγραφής συνεδρίας.</p>
+      <p>Οι απαντήσεις υπάρχουν μόνο όσο παραμένει ανοιχτή η συγκεκριμένη σελίδα και διαγράφονται με την ανανέωση ή το κλείσιμό της.</p>
+    </dialog>
+
+    <noscript>Η εφαρμογή χρειάζεται JavaScript για την επιλογή περιφέρειας και την προσωπική σύγκριση.</noscript>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
