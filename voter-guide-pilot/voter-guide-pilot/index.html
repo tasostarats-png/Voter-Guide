@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Πιλοτικός οδηγός κομμάτων και υποψηφίων για τη Δυτική Μακεδονία." />
+    <title>Η δική μου επιλογή — Πιλοτικός οδηγός ψηφοφόρου</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#parties" aria-label="Αρχική σελίδα"><span class="brand-mark" aria-hidden="true">✓</span><span>Η δική μου επιλογή</span></a>
+      <nav class="site-nav" aria-label="Κύρια πλοήγηση">
+        <button type="button" data-view="parties">Κόμματα</button>
+        <button type="button" data-view="candidates">Υποψήφιοι</button>
+      </nav>
+      <button class="privacy-pill" id="privacyButton" type="button"><span aria-hidden="true">◉</span> Δεν αποθηκεύουμε απαντήσεις</button>
+    </header>
+
+    <main id="top">
+      <div class="page-view" id="viewParties">
+        <section class="subpage-hero">
+          <div class="eyebrow">ΕΠΙΣΗΜΑ ΠΡΟΓΡΑΜΜΑΤΑ ΚΑΙ ΚΟΜΜΑΤΙΚΕΣ ΘΕΣΕΙΣ</div>
+          <h1>Θέσεις<br /><em>κομμάτων</em></h1>
+          <p class="hero-copy">Σύγκρινε τις επίσημες θέσεις κάθε κόμματος χωρίς να αποδίδονται προσωπικά στους υποψηφίους του.</p>
+          <aside class="pilot-note"><strong>Ιστορικά δεδομένα δοκιμής</strong><span>Ο πιλότος βασίζεται στα κόμματα που εκπροσωπήθηκαν στη Βουλή μετά τις εκλογές της 25ης Ιουνίου 2023.</span></aside>
+        </section>
+
+        <section class="workspace party-workspace" aria-live="polite">
+          <div class="section-heading"><span>01</span><div><h2>Επίλεξε κόμμα</h2><p>Οι κομματικές θέσεις αποτελούν ξεχωριστό πεδίο αξιολόγησης.</p></div></div>
+          <div class="candidate-layout"><aside class="candidate-list-wrap"><div class="list-count">8 κόμματα στο δείγμα</div><div class="candidate-list" id="partyList"></div></aside><article class="candidate-detail" id="partyDetail"></article></div>
+        </section>
+
+        <section class="results" aria-labelledby="partyResultsTitle">
+          <div class="section-heading inverse"><span>02</span><div><h2 id="partyResultsTitle">Η εικόνα σου για τα κόμματα</h2><p>Μέση συμφωνία ανά κόμμα, μόνο από τις θέσεις που αξιολόγησες.</p></div></div>
+          <div id="partyResultsBody"></div>
+          <p class="results-disclaimer">Το αποτέλεσμα δεν αποτελεί εκλογική σύσταση και δεν συνδέεται αυτόματα με κανέναν υποψήφιο.</p>
+          <button class="reset-button" id="partyResetAnswers" type="button">Καθαρισμός των απαντήσεών μου</button>
+        </section>
+
+        <section class="methodology"><div class="section-heading"><span>03</span><div><h2>Τι περιλαμβάνεται</h2><p>Κάθε κάρτα παραπέμπει στην επίσημη πηγή της κομματικής θέσης.</p></div></div><p class="source-note">Οι θέσεις είναι ενδεικτικό και μη εξαντλητικό δείγμα. Η ημερομηνία κάθε πηγής εμφανίζεται στην τεκμηρίωση και το περιεχόμενο χρειάζεται περιοδική επικαιροποίηση.</p></section>
+      </div>
+
+      <div class="page-view hidden" id="viewCandidates">
+        <section class="subpage-hero">
+          <div class="eyebrow">ΠΡΟΣΩΠΙΚΕΣ ΔΗΜΟΣΙΕΣ ΤΟΠΟΘΕΤΗΣΕΙΣ</div>
+          <h1>Θέσεις<br /><em>υποψηφίων</em></h1>
+          <p class="hero-copy">Εδώ εμφανίζονται αποκλειστικά θέσεις που τεκμηριώνονται ως προσωπικές δηλώσεις, προτάσεις ή κοινοβουλευτικές παρεμβάσεις του προσώπου.</p>
+          <aside class="pilot-note"><strong>Ιστορικά δεδομένα δοκιμής</strong><span>Τα ονόματα προέρχονται από τις εκλογές της 25ης Ιουνίου 2023 και δεν αποτελούν κατάλογο υποψηφίων για το 2027.</span></aside>
+        </section>
+
+        <section class="finder" aria-labelledby="finderTitle">
+          <div class="section-heading"><span>01</span><div><h2 id="finderTitle">Βρες την περιφέρειά σου</h2><p>Ο πιλότος καλύπτει τις τέσσερις εκλογικές περιφέρειες της Δυτικής Μακεδονίας.</p></div></div>
+          <div class="district-grid" id="districtGrid" aria-label="Επιλογή εκλογικής περιφέρειας"></div>
+        </section>
+
+        <section class="workspace hidden" id="candidateWorkspace" aria-live="polite">
+          <div class="workspace-head"><div><div class="eyebrow">Η ΕΚΛΟΓΙΚΗ ΣΟΥ ΠΕΡΙΦΕΡΕΙΑ</div><h2 id="districtTitle"></h2><p id="districtMeta"></p></div><button class="text-button" id="changeDistrict" type="button">Αλλαγή περιφέρειας</button></div>
+          <div class="filter-row"><label class="search-field"><span class="sr-only">Αναζήτηση υποψηφίου</span><input id="candidateSearch" type="search" placeholder="Αναζήτηση ονόματος…" autocomplete="off" /></label><label class="select-field"><span class="sr-only">Φίλτρο κόμματος</span><select id="partyFilter"><option value="all">Όλα τα κόμματα</option></select></label></div>
+          <div class="candidate-layout"><aside class="candidate-list-wrap"><div class="list-count" id="candidateCount"></div><div class="candidate-list" id="candidateList"></div></aside><article class="candidate-detail" id="candidateDetail"></article></div>
+        </section>
+
+        <section class="results hidden" id="candidateResults" aria-labelledby="candidateResultsTitle">
+          <div class="section-heading inverse"><span>02</span><div><h2 id="candidateResultsTitle">Η εικόνα σου για τους υποψηφίους</h2><p>Υπολογίζεται μόνο από τις προσωπικές θέσεις που επέλεξες να αξιολογήσεις.</p></div></div>
+          <div id="candidateResultsBody"></div>
+          <p class="results-disclaimer">Η σειρά δεν αποτελεί εκλογική σύσταση. Τα κενά τεκμηρίωσης δεν πρέπει να ερμηνεύονται ως απουσία πολιτικών θέσεων.</p>
+          <button class="reset-button" id="candidateResetAnswers" type="button">Καθαρισμός των απαντήσεών μου</button>
+        </section>
+
+        <section class="methodology"><div class="section-heading"><span>03</span><div><h2>Τι περιλαμβάνεται</h2><p>Η ενότητα δεν χρησιμοποιεί κομματικές θέσεις ως υποκατάστατο προσωπικής δήλωσης.</p></div></div><p class="source-note">Όταν δεν έχει εντοπιστεί επαρκώς τεκμηριωμένη προσωπική τοποθέτηση, το προφίλ εμφανίζει σχετική ένδειξη και δεν βαθμολογείται.</p></section>
+      </div>
+    </main>
+
+    <dialog id="privacyDialog"><button class="dialog-close" id="dialogClose" type="button" aria-label="Κλείσιμο">×</button><h2>Οι επιλογές σου μένουν στη συσκευή σου</h2><p>Η εφαρμογή δεν χρησιμοποιεί βάση δεδομένων, λογαριασμό, cookies, localStorage ή εργαλεία καταγραφής συνεδρίας.</p><p>Οι απαντήσεις διαγράφονται με την ανανέωση ή το κλείσιμο της σελίδας.</p></dialog>
+    <noscript>Η εφαρμογή χρειάζεται JavaScript για την προσωπική σύγκριση.</noscript>
+    <script src="data.js"></script><script src="app.js"></script>
+  </body>
+</html>
