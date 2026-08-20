@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Πιλοτικός οδηγός κομμάτων και υποψηφίων για τη Δυτική Μακεδονία." />
+    <title>Η δική μου επιλογή — Πιλοτικός οδηγός ψηφοφόρου</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#parties" aria-label="Αρχική σελίδα"><span class="brand-mark" aria-hidden="true">✓</span><span>Η δική μου επιλογή</span></a>
+      <nav class="site-nav" aria-label="Κύρια πλοήγηση">
+        <button type="button" data-view="parties">Κόμματα</button>
+        <button type="button" data-view="statements">Υποψήφιοι</button>
+        <button type="button" data-view="match">Σύγκριση</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <div class="page-view" id="viewParties">
+        <section class="subpage-hero">
+          <div class="eyebrow">ΕΠΙΣΗΜΑ ΠΡΟΓΡΑΜΜΑΤΑ ΚΑΙ ΚΟΜΜΑΤΙΚΕΣ ΘΕΣΕΙΣ</div>
+          <h1>Θέσεις<br /><em>κομμάτων</em></h1>
+          <p class="hero-copy">Διάβασε τις επίσημες θέσεις κάθε κόμματος χωρίς να αποδίδονται προσωπικά στους υποψηφίους του.</p>
+          <aside class="pilot-note"><strong>Ιστορικά δεδομένα δοκιμής</strong><span>Ο πιλότος βασίζεται στα κόμματα που εκπροσωπήθηκαν στη Βουλή μετά τις εκλογές της 25ης Ιουνίου 2023.</span></aside>
+        </section>
+
+        <section class="workspace party-workspace" aria-live="polite">
+          <div class="section-heading"><span>01</span><div><h2>Επίλεξε κόμμα</h2><p>Οι θέσεις συνοδεύονται από την ημερομηνία και την επίσημη πηγή τους.</p></div></div>
+          <div class="candidate-layout"><aside class="candidate-list-wrap"><div class="list-count">8 κόμματα στο δείγμα</div><div class="candidate-list" id="partyList"></div></aside><article class="candidate-detail" id="partyDetail"></article></div>
+        </section>
+
+        <section class="methodology"><div class="section-heading"><span>02</span><div><h2>Τι περιλαμβάνεται</h2><p>Η ενότητα είναι ενημερωτική και δεν περιλαμβάνει κλίμακα συμφωνίας.</p></div></div><p class="source-note">Οι θέσεις είναι ενδεικτικό και μη εξαντλητικό δείγμα. Η ημερομηνία κάθε πηγής εμφανίζεται στην τεκμηρίωση και το περιεχόμενο χρειάζεται περιοδική επικαιροποίηση.</p></section>
+      </div>
+
+      <div class="page-view hidden" id="viewStatements">
+        <section class="subpage-hero">
+          <div class="eyebrow">ΡΟΗ ΠΡΟΣΩΠΙΚΩΝ ΔΗΜΟΣΙΩΝ ΤΟΠΟΘΕΤΗΣΕΩΝ</div>
+          <h1>Τελευταίες<br /><em>δηλώσεις</em></h1>
+          <p class="hero-copy">Οι προσωπικές παρεμβάσεις παρουσιάζονται χρονολογικά, με έμφαση στην περιφέρεια και στο τοπικό ζήτημα που αφορούν.</p>
+          <aside class="pilot-note"><strong>Ιστορικό πιλοτικό αρχείο</strong><span>Τα πρόσωπα προέρχονται από τα ψηφοδέλτια της 25ης Ιουνίου 2023. Η ροή δεν αποτελεί κατάλογο υποψηφίων του 2027.</span></aside>
+        </section>
+
+        <section class="feed-section">
+          <div class="section-heading"><span>01</span><div><h2>Ροή δηλώσεων</h2><p>Επίλεξε περιφέρεια για να δεις τις πιο πρόσφατες τεκμηριωμένες προσωπικές τοποθετήσεις.</p></div></div>
+          <div class="filter-chips" id="statementDistricts" aria-label="Φίλτρο εκλογικής περιφέρειας"></div>
+          <div class="feed-meta" id="feedMeta"></div>
+          <div class="statement-feed" id="statementFeed"></div>
+        </section>
+
+        <section class="methodology"><div class="section-heading"><span>02</span><div><h2>Πώς διαβάζεται η ροή</h2><p>Οι κάρτες ταξινομούνται από τη νεότερη προς την παλαιότερη ημερομηνία.</p></div></div><p class="source-note">Εμφανίζονται μόνο προσωπικές δηλώσεις, προτάσεις ή κοινοβουλευτικές παρεμβάσεις που διαθέτουν επαληθεύσιμη πηγή. Η απουσία ενός προσώπου από τη ροή σημαίνει έλλειψη καταχωρισμένης τεκμηρίωσης και όχι απουσία πολιτικών θέσεων.</p></section>
+      </div>
+
+      <div class="page-view hidden" id="viewMatch">
+        <section class="subpage-hero match-hero">
+          <div class="eyebrow">ΟΥΔΕΤΕΡΗ ΣΥΓΚΡΙΣΗ ΤΕΚΜΗΡΙΩΜΕΝΩΝ ΘΕΣΕΩΝ</div>
+          <h1>Σύγκρινε<br /><em>τις θέσεις</em></h1>
+          <p class="hero-copy">Επίλεξε εκλογική περιφέρεια, δύο ή τρεις υποψηφίους και δες δίπλα-δίπλα τις διαθέσιμες προσωπικές θέσεις τους ανά θέμα.</p>
+          <aside class="privacy-note"><strong>Δεν παράγεται πρόταση ψήφου</strong><span>Δεν υπάρχει βαθμολογία, αντιστοίχιση ή κατάταξη. Οι προσωρινές επιλογές σύγκρισης δεν αποθηκεύονται και χάνονται με ανανέωση ή κλείσιμο.</span></aside>
+        </section>
+
+        <section class="finder" aria-labelledby="matchFinderTitle">
+          <div class="section-heading"><span>01</span><div><h2 id="matchFinderTitle">Επίλεξε περιφέρεια</h2><p>Η σύγκριση χρησιμοποιεί μόνο τεκμηριωμένες προσωπικές θέσεις και όχι τις γενικές θέσεις των κομμάτων.</p></div></div>
+          <div class="district-grid" id="matchDistrictGrid" aria-label="Επιλογή εκλογικής περιφέρειας"></div>
+        </section>
+
+        <section class="match-workspace hidden" id="matchWorkspace" aria-live="polite">
+          <div class="workspace-head"><div><div class="eyebrow">ΕΠΙΛΕΓΜΕΝΗ ΕΚΛΟΓΙΚΗ ΠΕΡΙΦΕΡΕΙΑ</div><h2 id="matchDistrictTitle"></h2><p id="matchDistrictMeta"></p></div><button class="text-button" id="changeMatchDistrict" type="button">Αλλαγή περιφέρειας</button></div>
+          <div class="match-note" id="matchCoverage"></div>
+          <div class="comparison-step">
+            <div class="comparison-step-head"><div><span>02</span><h3>Επίλεξε 2–3 υποψηφίους</h3></div><strong id="compareSelectionCount">0/3 επιλεγμένοι</strong></div>
+            <p>Ο επιλογέας εμφανίζεται αλφαβητικά. Η σειρά δεν υποδηλώνει αξιολόγηση ή προτίμηση.</p>
+            <div class="compare-candidate-picker" id="compareCandidatePicker" aria-label="Επιλογή υποψηφίων για σύγκριση"></div>
+            <div class="compare-notice" id="compareCandidateNotice" role="status"></div>
+          </div>
+
+          <div class="comparison-step hidden" id="compareTopicStep">
+            <div class="comparison-step-head"><div><span>03</span><h3>Φίλτραρε ανά θέμα</h3></div><button class="outline-button" id="compareReset" type="button">Καθαρισμός επιλογών</button></div>
+            <p>Εμφανίζονται μόνο θεματικές για τις οποίες υπάρχει τουλάχιστον μία καταχωρισμένη θέση των επιλεγμένων προσώπων.</p>
+            <div class="filter-chips" id="compareTopics" aria-label="Φίλτρο θεματικής"></div>
+          </div>
+
+          <section class="comparison-output" aria-labelledby="comparisonTitle">
+            <div class="comparison-output-head"><span>04</span><div><h3 id="comparisonTitle">Θέσεις δίπλα-δίπλα</h3><p>Κάθε στήλη παραθέτει όσα έχουν τεκμηριωθεί για το αντίστοιχο πρόσωπο, χωρίς συμπλήρωση κενών από κομματικές θέσεις.</p></div></div>
+            <div id="comparisonMatrix"></div>
+          </section>
+        </section>
+
+        <section class="methodology"><div class="section-heading"><span>05</span><div><h2>Πώς λειτουργεί η σύγκριση</h2><p>Το εργαλείο οργανώνει τις διαθέσιμες προσωπικές θέσεις ανά θεματική, χωρίς να τις βαθμολογεί ή να προτείνει επιλογή.</p></div></div><div class="method-grid"><article><b>01</b><h3>Ίδια βάση προβολής</h3><p>Οι επιλεγμένοι υποψήφιοι εμφανίζονται σε παράλληλες στήλες και με την ίδια σειρά θεμάτων.</p></article><article><b>02</b><h3>Ορατά κενά</h3><p>Όταν δεν υπάρχει καταχωρισμένη προσωπική θέση, αυτό δηλώνεται ρητά αντί να συναχθεί συμπέρασμα.</p></article><article><b>03</b><h3>Χωρίς σύσταση</h3><p>Δεν υπολογίζεται σκορ, ιδεολογική εγγύτητα, σειρά κατάταξης ή προτεινόμενη ψήφος.</p></article></div><p class="source-note">Το υλικό είναι ενδεικτικό και μη εξαντλητικό. Η απουσία τεκμηριωμένης θέσης δεν σημαίνει ότι ένα πρόσωπο δεν έχει τοποθετηθεί· σημαίνει μόνο ότι δεν υπάρχει σχετική εγγραφή στο πιλοτικό σύνολο δεδομένων.</p></section>
+      </div>
+    </main>
+
+    <noscript>Η εφαρμογή χρειάζεται JavaScript για την πλοήγηση και τη σύγκριση των θέσεων.</noscript>
+    <script src="data.js"></script><script src="app.js"></script>
+  </body>
+</html>
